@@ -1,37 +1,19 @@
-from weather_info import (
-    get_weather, 
-    get_weather_forecast, 
-    weather_alerts, 
-    save_favourite_city, 
-    get_favourite_cities,
-    remove_favourite_city
-)
+from weather_info import get_weather, get_5_day_forecast, save_favourite_city, remove_favourite_city, get_favourite_cities_weather, get_weather_alerts
 
-def test_all_features():
-    city_name = "Jaipur" 
-    unit = "metric"  
+print("Current Weather for Kanpur:")
+print(get_weather("Kanpur", "metric"))
 
-    
-    print("Testing Current Weather:")
-    print(get_weather(city_name, unit))
+print("\nCurrent Weather for Mumbai:")
+print(get_weather("Shimla", "imperial"))
 
-    
-    print("\nTesting 5-Day Forecast:")
-    print(get_weather_forecast(city_name))
+print("\n5-Day Forecast for Mumbai:")
+print(get_5_day_forecast("Mumbai", "metric"))
 
-   
-    print("\nTesting Weather Alerts:")
-    print(weather_alerts(26.4499, 80.3319))  
+print("\nAdding Mumbai to favourites:")
+print(save_favourite_city("Jaipur"))
 
-   
-    print("\nTesting Saving Favorite City:")
-    print(save_favourite_city(city_name))
-    
-    print("\nTesting Removing Favorite City:")
-    print(remove_favourite_city(city_name))
-   
-    print("\nTesting Retrieving Favorite Cities:")
-    print(get_favourite_cities())
+print("\nWeather for favourite cities:")
+print(get_favourite_cities_weather("metric"))
 
-if __name__ == "__main__":
-    test_all_features()
+print("\nRemoving Mumbai from favourites:")
+print(remove_favourite_city("Mumbai"))

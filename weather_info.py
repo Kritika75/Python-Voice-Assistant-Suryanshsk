@@ -14,7 +14,6 @@ FAVOURITES_FILE = 'favourite_cities.json'
 
 
 def get_weather(city_name, unit="metric"):
-    """Fetch current weather for a specific city with chosen unit (metric, imperial, kelvin)."""
     try:
         unit_param = {"metric": "°C", "imperial": "°F", "kelvin": "K"}
         complete_url = BASE_URL + f"q={city_name}&units={unit}&appid=" + API_KEY
@@ -41,7 +40,7 @@ def get_weather(city_name, unit="metric"):
 
 
 def get_5_day_forecast(city_name, unit="metric"):
-    """Fetch 5-day weather forecast for a specific city."""
+
     try:
         complete_url = FORECAST_URL + f"q={city_name}&units={unit}&appid=" + API_KEY
         response = requests.get(complete_url)
@@ -69,7 +68,7 @@ def get_5_day_forecast(city_name, unit="metric"):
 
 
 def get_weather_alerts(lat, lon):
-    """Display any weather alerts for a specific city by geographic coordinates."""
+
     try:
         complete_url = ALERTS_URL + f"lat={lat}&lon={lon}&appid=" + API_KEY
         response = requests.get(complete_url)
@@ -92,7 +91,6 @@ def get_weather_alerts(lat, lon):
 
 
 def save_favourite_city(city_name):
-    """Save a city to the list of favourite cities."""
     try:
         with open(FAVOURITES_FILE, 'r') as file:
             favourites = json.load(file)
@@ -109,7 +107,6 @@ def save_favourite_city(city_name):
 
 
 def remove_favourite_city(city_name):
-    """Remove a city from the list of favourite cities."""
     try:
         with open(FAVOURITES_FILE, 'r') as file:
             favourites = json.load(file)
@@ -126,7 +123,6 @@ def remove_favourite_city(city_name):
 
 
 def get_favourite_cities_weather(unit="metric"):
-    """Get the weather for all favourite cities."""
     try:
         with open(FAVOURITES_FILE, 'r') as file:
             favourites = json.load(file)
@@ -146,7 +142,7 @@ def log_api_call(city_name, response):
 
 if __name__ == "__main__":
     print(get_weather("Kanpur"))
-    print(get_5_day_forecast("Mumbai"))
+    print(get_5_day_forecast("Shimla"))
     print(save_favourite_city("Mumbai"))
     print(get_favourite_cities_weather())
-    print(remove_favourite_city("Mumbai"))
+    print(remove_favourite_city("Jaipur"))
