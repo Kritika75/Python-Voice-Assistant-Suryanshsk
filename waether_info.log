@@ -1,0 +1,6 @@
+2024-10-09 04:47:11,780 - INFO - Successfully getched the weather of Kanpur
+2024-10-09 04:52:58,002 - ERROR - Failed to fetch the weather of Kanpur: 401 {"cod":401, "message": "Invalid API key. Please see https://openweathermap.org/faq#error401 for more info."}
+2024-10-09 04:53:49,882 - INFO - Successfully getched the weather of Kanpur
+2024-10-09 04:54:29,840 - INFO - Successfully getched the weather of Mumbai
+2024-10-09 04:55:25,933 - INFO - Successfully getched the weather of Shimla
+2024-10-09 04:56:46,827 - INFO - Successfully getched the weather of Jaipur
